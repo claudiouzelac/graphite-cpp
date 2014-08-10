@@ -1,3 +1,4 @@
+//Copyright 2014, Stewart Henderson
 #pragma once
 
 #include <iostream>
