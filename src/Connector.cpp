@@ -1,6 +1,6 @@
 #include "Connector.hpp"
 
-Connector::Connector(const std::string& hostA, int portA) {
+Connector::Connector(const std::string& hostA, unsigned short portA) {
     endpointM = boost::asio::ip::tcp::endpoint(
             boost::asio::ip::address::from_string(hostA), portA);
 }
@@ -18,4 +18,8 @@ void Connector::disconnect(void) {
 
 void Connector::write(std::string messageA) {
     socketM->write_some(boost::asio::buffer(messageA));
+}
+
+Connector::~Connector() {
+    delete(socketM);
 }

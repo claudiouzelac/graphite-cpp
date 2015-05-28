@@ -15,7 +15,10 @@ public:
     * \param hostA, IP address for Graphite server
     * \param portA, port for Graphite server
     */
-    Connector(const std::string& hostA, int portA);
+    Connector(const std::string& hostA, unsigned short portA);
+
+    ~Connector();
+
     /// Connect to the specified server
     void connect(void);
     /// Disconnect from the specified server
