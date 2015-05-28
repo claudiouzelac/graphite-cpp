@@ -1,8 +1,8 @@
 #include <string>
-#include "graphite_reporter.h"
+#include "Reporter.hpp"
 
 int main() {
-    graphite_reporter reporter("your host IP here", 2003);
+    Reporter reporter("your host IP here", 2003);
     reporter.connect();
     reporter.send("local.random.dicerool", 5);
     return 0;
